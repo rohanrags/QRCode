@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Shrivastava QR Code Generator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+
+  <body>
+		<div ng-app="myApp" ng-controller="myControl">
+				<input id="text" style="width:100%;" ng-model="urls" >
+				<p class="new">QR CODE</p>
+		</div>
+		
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myControl', function($scope, $location) {
+				$scope.urls = makeCode();
+				console.log($scope.urls);
+				});
+		</script>
+   
+		<div id="qrcode" align="center"></div>
+		
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="qrcode.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
